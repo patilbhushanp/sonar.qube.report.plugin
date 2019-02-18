@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This Filter used to fetch requirement specific data from SonarQube server. -->
+<Filter>
+	<Types>BUG,VULNERABILITY</Types>
+	<Resolutions>OPEN,FIXED,WONTFIX,FALSE-POSITIVE</Resolutions>
+	<Severities>BLOCKER</Severities>
+	<Projects></Projects>
+	<DateRange>
+		<CreatedAfter>2019-02-03</CreatedAfter>
+		<CreatedBefore>2019-02-15</CreatedBefore>
+	</DateRange>
+</Filter>
