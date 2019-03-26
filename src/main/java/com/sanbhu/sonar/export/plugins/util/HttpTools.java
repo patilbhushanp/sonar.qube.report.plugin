@@ -41,23 +41,23 @@ public class HttpTools {
 		final StringBuilder queryParameter = new StringBuilder();
 		queryParameter.append("?");
 		if (!sonarQubeFilter.getTypes().isEmpty()) {
-			queryParameter.append("Types=").append(getParameterValue(sonarQubeFilter.getTypes())).append("&");
+			queryParameter.append("types=").append(getParameterValue(sonarQubeFilter.getTypes())).append("&");
 		}
 		if (!sonarQubeFilter.getResolutions().isEmpty()) {
-			queryParameter.append("Resolutions=").append(getParameterValue(sonarQubeFilter.getResolutions()))
+			queryParameter.append("resolutions=").append(getParameterValue(sonarQubeFilter.getResolutions()))
 					.append("&");
 		}
 		if (!sonarQubeFilter.getProjects().isEmpty()) {
-			queryParameter.append("Projects=").append(getParameterValue(sonarQubeFilter.getProjects())).append("&");
+			queryParameter.append("id=").append(getParameterValue(sonarQubeFilter.getProjects())).append("&");
 		}
 		if (!sonarQubeFilter.getSeverities().isEmpty()) {
-			queryParameter.append("Severities=").append(getParameterValue(sonarQubeFilter.getSeverities())).append("&");
+			queryParameter.append("severities=").append(getParameterValue(sonarQubeFilter.getSeverities())).append("&");
 		}
 		if (!sonarQubeFilter.getStartDate().isEmpty()) {
-			queryParameter.append("CreatedAfter=").append(sonarQubeFilter.getStartDate()).append("&");
+			queryParameter.append("createdAfter=").append(sonarQubeFilter.getStartDate()).append("&");
 		}
 		if (!sonarQubeFilter.getEndDate().isEmpty()) {
-			queryParameter.append("CreatedBefore=").append(sonarQubeFilter.getEndDate()).append("&");
+			queryParameter.append("createdBefore=").append(sonarQubeFilter.getEndDate()).append("&");
 		}
 		return queryParameter.toString();
 	}
