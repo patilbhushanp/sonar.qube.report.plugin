@@ -20,7 +20,8 @@ public class HttpTools {
 		urlBuilder.append(getQueryParameter(sonarQubeFilter));
 		try {
 			final HttpClient client = HttpClientBuilder.create().build();
-			final HttpGet request = new HttpGet(url);
+			System.out.println("Sonar API URL : " + urlBuilder.toString());
+			final HttpGet request = new HttpGet(urlBuilder.toString());
 			request.addHeader("User-Agent", "Mozilla/5.0");
 			request.addHeader("Accept", "application/json");
 			final HttpResponse response = client.execute(request);
