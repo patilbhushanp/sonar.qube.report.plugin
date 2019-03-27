@@ -2,7 +2,7 @@
 <!-- This Filter used to fetch requirement specific data from SonarQube server. -->
 <Filter>
 	<Types>BUG,VULNERABILITY</Types>
-	<Resolutions>OPEN,FIXED,WONTFIX,FALSE-POSITIVE</Resolutions>
+	<Resolutions>FALSE-POSITIVE,WONTFIX,FIXED,REMOVED</Resolutions>
 	<Severities>BLOCKER</Severities>
 	<Projects></Projects>
 	<DateRange>
