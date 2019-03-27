@@ -41,32 +41,32 @@ public class HttpTools {
 	private static String getQueryParameter(final SonarQubeFilter sonarQubeFilter) {
 		final StringBuilder queryParameter = new StringBuilder();
 		queryParameter.append("?");
-		if (!sonarQubeFilter.getTypes().isEmpty()) {
+		if (sonarQubeFilter.getTypes() != null && !sonarQubeFilter.getTypes().isEmpty()) {
 			queryParameter.append("types=").append(getParameterValue(sonarQubeFilter.getTypes())).append("&");
 		}
-		if (!sonarQubeFilter.getResolutions().isEmpty()) {
+		if (sonarQubeFilter.getResolutions() != null && !sonarQubeFilter.getResolutions().isEmpty()) {
 			queryParameter.append("resolutions=").append(getParameterValue(sonarQubeFilter.getResolutions()))
 					.append("&");
 		}
-		if (!sonarQubeFilter.getProjects().isEmpty()) {
+		if (sonarQubeFilter.getProjects() != null && !sonarQubeFilter.getProjects().isEmpty()) {
 			queryParameter.append("id=").append(getParameterValue(sonarQubeFilter.getProjects())).append("&");
 		}
-		if (!sonarQubeFilter.getSeverities().isEmpty()) {
+		if (sonarQubeFilter.getSeverities() != null && !sonarQubeFilter.getSeverities().isEmpty()) {
 			queryParameter.append("severities=").append(getParameterValue(sonarQubeFilter.getSeverities())).append("&");
 		}
-		if (!sonarQubeFilter.getStartDate().isEmpty()) {
+		if (sonarQubeFilter.getStartDate() != null && !sonarQubeFilter.getStartDate().isEmpty()) {
 			queryParameter.append("createdAfter=").append(sonarQubeFilter.getStartDate()).append("&");
 		}
-		if (!sonarQubeFilter.getEndDate().isEmpty()) {
+		if (sonarQubeFilter.getEndDate() != null && !sonarQubeFilter.getEndDate().isEmpty()) {
 			queryParameter.append("createdBefore=").append(sonarQubeFilter.getEndDate()).append("&");
 		}
 		return queryParameter.toString();
 	}
-
+	
 	private static String getParameterValue(final List<String> valueList) {
 		String parameterValue = "";
 		for (final String value : valueList) {
-			parameterValue = value + ",";
+			parameterValue += value + ",";
 		}
 		if (parameterValue.lastIndexOf(",") == parameterValue.length() - 1) {
 			parameterValue = parameterValue.substring(0, parameterValue.length() - 1);
